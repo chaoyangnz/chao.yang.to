@@ -1,0 +1,77 @@
+Title =  "Chao Yang"
+LanguageCode = "en-us"
+BaseUrl = "/"
+Theme =  "next"
+MetaDataFormat =  "yaml"
+CanonifyUrls =  true
+BuildDrafts =  false
+PaginatePath =  "p"
+Paginate = 20
+DisablePathToLower =  false
+HasCJKLanguage = true
+PreserveTaxonomyNames = false
+UglyUrls = false
+PygmentsStyle = "monokai"
+PygmentsUseClasses = true
+PygmentsCodeFences = true
+DefaultContentLanguage = "en"
+
+[Params]
+  Introduce = "Programmer & Life explorer"
+  Description = "A Developer in New Zealand"
+  Keywords =  "Java, Programming, Android, JavaScript, Angular, Kotlin, Swift, iOS, Machine Learning, Big Data"
+  Subtitle = "Nothing seek, nothing find"
+  Imglogo = "/img/logo.png"
+  AuthorImg = "/img/author.jpg"
+  DateFormat = "2006-01-02"
+  YearFormat = "2006"
+  MonthFormat = "01-02"
+  Fancybox = true
+
+[Author]
+  Name = "Chao"
+
+[Params.Share]
+  Baidu = false
+  Weixin = false
+
+[[Menu.Main]]
+  Name = "Home"
+  Pre = "home"
+  URL = "/"
+  Weight = 1
+[[Menu.Main]]
+  Name = "Dev"
+  Pre = "code"
+  URL = "https://github.com/chaoyangnz"
+  Weight = 2
+[[Menu.Main]]
+  Name = "CV"
+  Pre = "linkedin"
+  URL = "/resume/cv.pdf"
+  Weight = 3
+[[Menu.Main]]
+  Name = "Minibooks"
+  Pre = "book"
+  URL = "/books"
+  Weight = 4
+[[Menu.Main]]
+  Name = "About"
+  Pre = "user"
+  URL = "/about/"
+  Weight = 5
+[[Menu.Main]]
+  Name = "Archive"
+  Pre = "archive"
+  URL = "/post/index.html"
+  Weight = 6
+
+[[Params.Socials]]
+  Name = "GitHub"
+  Icon = "github"
+  URL = "https://github.com/chaoyangnz"
+
+[[Params.Socials]]
+  Name = "Linkedin"
+  Icon = "linkedin"
+  URL = "https://linkedin.com/in/chaoyangnz"  
