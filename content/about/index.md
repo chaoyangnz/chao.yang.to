@@ -3,7 +3,7 @@ title: About
 comment: false
 ---
 
-I am a Java Developer with over 8 years enterprise-level application development experience.
+I am a Java/Frontend Developer with over 8 years enterprise-level application development experience.
 Low key, pragmatic, skeptical, late-bloomer, acting more than talking and probably not as smart as I think I am. He/ him. 
 I love:
 - peaceful life;
