@@ -27,6 +27,7 @@ DefaultContentLanguage = "en"
   YearFormat = "2006"
   MonthFormat = "01-02"
   Fancybox = true
+  Version = "0.74.3"
 
 [Author]
   Name = "Chao"
