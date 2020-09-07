@@ -1,7 +1,7 @@
 Title =  "Chao Yang"
 LanguageCode = "en-us"
 BaseUrl = "/"
-Theme =  "next"
+Theme =  "LoveIt"
 MetaDataFormat =  "yaml"
 CanonifyUrls =  true
 BuildDrafts =  false

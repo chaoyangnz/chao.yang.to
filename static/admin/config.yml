@@ -3,6 +3,14 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
 media_folder: content/media
 public_folder: /media
+publish_mode: editorial_workflow
+site_url: https://chao.yang.to
+display_url: https://chao.yang.to
+show_preview_links: true
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: '-'
 collections:
   - name: 'post'
     label: 'Blog'
@@ -14,5 +22,5 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
