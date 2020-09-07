@@ -7,13 +7,13 @@ Recently, I plan to make my gaming PC (Intel NUC Hades Canyon) as my major works
 
 Basically, I bought two SSD disks (Sumsung 970 EVO Plus) and one for Windows 10 and another for MacOSX. The installation is pretty simple, bake the image and install with USB.
 
-Once I installed both, I patch the Mac with OpenCore so that it can boot dual OS. But I found the boot args are not working as my expectation: the default order I hope should be Windows 10 and timeout is too short.
+Once I installed both, I patched Mac with OpenCore so that it can boot dual OS. But I found the boot args are not working as my expectation: the default order I hope should be Windows 10 and timeout is too short.
 
 This is what I did to modify these args.
 
 - run these commands in administrative command prompt:
 
-```
+```bash
 diskpart
 list disk
 select disk 0
