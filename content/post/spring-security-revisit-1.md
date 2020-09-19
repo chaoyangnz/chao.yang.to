@@ -18,14 +18,14 @@ By default, these authentication token implementation types:
 A provider to handle the authentication when authentication token type is matched:
 
 
-| Authentication providers                                                                         | Supported authentication            |   |   |
-|--------------------------------------------------------------------------------------------------|-------------------------------------|---|---|
-| AnonymousAuthenticationProvider                                                                  | AnonymousAuthenticationToken        |   |   |
-| AbstractUserDetailsAuthenticationProvider DaoAuthenticationProvider RemoteAuthenticationProvider | UsernamePasswordAuthenticationToken |   |   |
-| AbstractJaasAuthenticationProvider DefaultJaasAuthenticationProvider JaasAuthenticationProvider  | JaasAuthenticationToken             |   |   |
-| PreAuthenticatedAuthenticationProvider                                                           | PreAuthenticatedAuthenticationToken |   |   |
-| RememberMeAuthenticationProvider                                                                 | RememberMeAuthenticationToken       |   |   |
-| RunAsImplAuthenticationProvider                                                                  | RunAsUserToken                      |   |   |
+| Authentication providers                                                                         | Supported authentication            |
+|--------------------------------------------------------------------------------------------------|-------------------------------------|
+| AnonymousAuthenticationProvider                                                                  | AnonymousAuthenticationToken        |
+| AbstractUserDetailsAuthenticationProvider DaoAuthenticationProvider RemoteAuthenticationProvider | UsernamePasswordAuthenticationToken |
+| AbstractJaasAuthenticationProvider DefaultJaasAuthenticationProvider JaasAuthenticationProvider  | JaasAuthenticationToken             |
+| PreAuthenticatedAuthenticationProvider                                                           | PreAuthenticatedAuthenticationToken |
+| RememberMeAuthenticationProvider                                                                 | RememberMeAuthenticationToken       |
+| RunAsImplAuthenticationProvider                                                                  | RunAsUserToken                      |
 
 
 Here, AbstractUserDetailsAuthenticationProvider and its subclasses expect a `UserDetailsService` provided by us.
