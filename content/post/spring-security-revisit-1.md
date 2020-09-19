@@ -17,7 +17,7 @@ By default, these authentication token implementation types:
 # Authentication provider
 A provider to handle the authentication when authentication token type is matched:
 
-{{% table %}}
+
 | Authentication providers                                                                         | Supported authentication            |   |   |
 |--------------------------------------------------------------------------------------------------|-------------------------------------|---|---|
 | AnonymousAuthenticationProvider                                                                  | AnonymousAuthenticationToken        |   |   |
@@ -26,7 +26,7 @@ A provider to handle the authentication when authentication token type is matche
 | PreAuthenticatedAuthenticationProvider                                                           | PreAuthenticatedAuthenticationToken |   |   |
 | RememberMeAuthenticationProvider                                                                 | RememberMeAuthenticationToken       |   |   |
 | RunAsImplAuthenticationProvider                                                                  | RunAsUserToken                      |   |   |
-{{% /table %}}
+
 
 Here, AbstractUserDetailsAuthenticationProvider and its subclasses expect a `UserDetailsService` provided by us.
 RememberMeAuthenticationProvider expects a `RememberMeServices` provided by us.
