@@ -160,6 +160,10 @@ You define you filter to insert into the filter chain (typically between LogoutF
 
 Probably you should define authentication provider and your filters (maybe multiple) to support the flow.
 
+An example implementation can be seen here:
+
+https://github.com/chaoyangnz/email-service/tree/master/src/main/java/emailservice/entrypoint/rest/security
+
 # Important Filters
 
 ## ExceptionTranslationFilter
