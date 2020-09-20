@@ -56,6 +56,29 @@ Irrespective of which filters you are actually using, the order should be as fol
 * ExceptionTranslationFilter, to catch any Spring Security exceptions so that either an HTTP error response can be returned or an appropriate AuthenticationEntryPoint can be launched
 * FilterSecurityInterceptor, to protect web URIs and raise exceptions when access is denied
 
+The below is how a configurer in DSL configures relevant filters.
+
+
+
+| Configurer in DSL        | Involved filters                        |
+| ------------------------ | --------------------------------------- |
+| http.formLogin()         | UsernamePasswordAuthenticationFilter    |
+| http.rememberMe()        | RememberMeAuthenticationFilter          |
+| http.httpBasic()         | HttpBasicAuthenticationFilter           |
+| http.logout()            | LogoutFilter                            |
+| http.csrf()              | CsrfFilter                              |
+| http.anonymous()         | AnonymousAuthenticationFilter           |
+| http.openid()            | OpenIDAuthenticationFilter              |
+| http.x509()              | x509AuthenticationFilter                |
+|                          |                                         |
+| http.exceptionHandling() | ExceptionTranslationFilter              |
+| http.authorizeRequests() | FilterSecurityInterceptor               |
+| http.sessionManagement() | SessionManagementFilter                 |
+| http.headers()           | HeaderWriterFilter                      |
+| http.cors()              | CorsFilter                              |
+| http.requestCache()      | RequestCacheFilter()                    |
+| http.servletApi()        | SecurityContextHolderAwareRequestFilter |
+
 For a minimal http security config, these are the filters:
 
 ```text
