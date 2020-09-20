@@ -34,6 +34,12 @@ RememberMeAuthenticationProvider expects a `RememberMeServices` provided by us.
 # SecurityFilterChain and FilterChainProxy
 A filter chain is a list of filters with the order to perform the filtering task. They are defined as Spring FilterBean.
 
+![](https://github.com/spring-guides/top-spring-security-architecture/raw/master/images/security-filters.png)
+
+And the FilterChainProxy can include multiple filter chains,
+
+![](https://github.com/spring-guides/top-spring-security-architecture/raw/master/images/security-filters-dispatch.png)
+
 FilterChainProxy is a servlet filter to perform the filter chains.
 
 Irrespective of which filters you are actually using, the order should be as follows:
@@ -156,3 +162,25 @@ You define you filter to insert into the filter chain (typically between LogoutF
 - Custom authentication mechanism
 
 Probably you should define authentication provider and your filters (maybe multiple) to support the flow.
+
+# Important Filters
+
+## ExceptionTranslationFilter
+
+This filter is normally registered at the very bottom. And what it is doing to catch errors thrown in filters after it (FilterSecurityInterceptor), and handling them. By default, it is using `Http403ForbiddenEntryPoint` and `AccessDeniedHandlerImpl` where it calls `sendError()` which is a redirection to WhiteLabel error page `/error` and show generic JSON/HTML page.
+
+You can define `AuthenticationEntryPoint` and `AccessDeniedHandler` to customise the error handling.
+
+In general, this filter is not that useful, as its order is too high, so that the errors thrown before it cannot be caught and by default directly handled by WhiteLabel error page.
+
+## FilterSecurityInterceptor
+
+This filter is the last gate to check Authentication and apply authorizeRequest rules.
+
+For example, if you config `.anyRequest().authenticated()`, it will check if `Authentication` is null and `authenticated` is true, etc.
+
+From the design of Spring Security, normally it doesn't hope you throw exception in your authentication mechanism, instead you only need to provide `Authentication` object and populate its fields.
+
+
+
+
