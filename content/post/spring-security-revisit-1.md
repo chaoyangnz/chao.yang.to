@@ -173,13 +173,21 @@ You can define `AuthenticationEntryPoint` and `AccessDeniedHandler` to customise
 
 In general, this filter is not that useful, as its order is too high, so that the errors thrown before it cannot be caught and by default directly handled by WhiteLabel error page.
 
+I suggest you should disable it and create you own error handling filter.
+
 ## FilterSecurityInterceptor
 
-This filter is the last gate to check Authentication and apply authorizeRequest rules.
+This filter is the last gate to check Authentication and apply `authorizeRequests` rules.
 
 For example, if you config `.anyRequest().authenticated()`, it will check if `Authentication` is null and `authenticated` is true, etc.
 
 From the design of Spring Security, normally it doesn't hope you throw exception in your authentication mechanism, instead you only need to provide `Authentication` object and populate its fields.
+
+## AnonymousAuthenticationFilter
+
+This is to create a AnonymousAuthention if there is no Authentication in earlier filter.
+
+In general, it is not useful. If you keep it, you have to give it an extra care when you define `authorizeRequests` rules.
 
 
 
