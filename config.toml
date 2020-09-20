@@ -15,6 +15,7 @@ PygmentsStyle = "monokai"
 PygmentsUseClasses = true
 PygmentsCodeFences = true
 DefaultContentLanguage = "en"
+googleAnalytics = "UA-178463256-1"
 
 [Params]
   Introduce = "Programmer & Life explorer"
