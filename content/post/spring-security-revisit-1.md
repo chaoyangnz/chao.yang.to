@@ -58,19 +58,17 @@ Irrespective of which filters you are actually using, the order should be as fol
 
 The below is how a configurer in DSL configures relevant filters.
 
-
-
 | Configurer in DSL        | Involved filters                        |
 | ------------------------ | --------------------------------------- |
 | http.formLogin()         | UsernamePasswordAuthenticationFilter    |
 | http.rememberMe()        | RememberMeAuthenticationFilter          |
 | http.httpBasic()         | HttpBasicAuthenticationFilter           |
-| http.logout()            | LogoutFilter                            |
-| http.csrf()              | CsrfFilter                              |
 | http.anonymous()         | AnonymousAuthenticationFilter           |
 | http.openid()            | OpenIDAuthenticationFilter              |
 | http.x509()              | x509AuthenticationFilter                |
 |                          |                                         |
+| http.logout()            | LogoutFilter                            |
+| http.csrf()              | CsrfFilter                              |
 | http.exceptionHandling() | ExceptionTranslationFilter              |
 | http.authorizeRequests() | FilterSecurityInterceptor               |
 | http.sessionManagement() | SessionManagementFilter                 |
