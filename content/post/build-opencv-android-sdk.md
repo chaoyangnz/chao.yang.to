@@ -29,7 +29,7 @@ Why? because otherwise, `android` command has been deprecated)
 
 - opencv_contrib
 
-`git clone https://github.com/opencv/opencv.git`
+`git clone https://github.com/opencv/opencv_contrib.git`
 
 - CMake
 
@@ -47,7 +47,7 @@ android-ndk-r10e
 
 Then run these commands:
 ```bash
-$ cd ~/opencv/ & mkdir build
+$ cd ~/opencv/ && mkdir build
 $ cd ~/opencv/platforms/android
 $ ./build_sdk.py --ndk_path ~/android-ndk-r10e --sdk_path ~/Library/Android/sdk --extra_modules_path ~/opencv_contrib/modules ~/opencv/build ~/opencv
 ```
