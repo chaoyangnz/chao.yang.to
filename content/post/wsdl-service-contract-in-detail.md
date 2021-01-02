@@ -12,73 +12,73 @@ date: "2015-04-21T14:47:44+00:00"
 
 
 ```java
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+<?xml version="1.0" encoding="UTF-8"?>;
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
              xmlns:tns="http://rand/"
              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
              xmlns="http://schemas.xmlsoap.org/wsdl/"
-             targetNamespace="http://rand/" name="RandServiceService"&gt;
-  &lt;types&gt;
-    &lt;xsd:schema&gt;
-      &lt;xsd:import namespace="http://rand/"
-                  schemaLocation="http://localhost:8888/rs?xsd=1"&gt;&lt;/xsd:import&gt;
-    &lt;/xsd:schema&gt;
-  &lt;/types&gt;
-  &lt;message name="next1"&gt;
-    &lt;part name="parameters" element="tns:next1"&gt;&lt;/part&gt;
-  &lt;/message&gt;
-  &lt;message name="next1Response"&gt;
-    &lt;part name="parameters" element="tns:next1Response"&gt;&lt;/part&gt;
-  &lt;/message&gt;
-  &lt;message name="nextN"&gt;
-    &lt;part name="parameters" element="tns:nextN"&gt;&lt;/part&gt;
-  &lt;/message&gt;
-  &lt;message name="nextNResponse"&gt;
-    &lt;part name="parameters" element="tns:nextNResponse"&gt;&lt;/part&gt;
-  &lt;/message&gt;
-  &lt;portType name="RandService"&gt;
-    &lt;operation name="next1"&gt;
-      &lt;input message="tns:next1"&gt;&lt;/input&gt;
-      &lt;output message="tns:next1Response"&gt;&lt;/output&gt;
-    &lt;/operation&gt;
-    &lt;operation name="nextN"&gt;
-      &lt;input message="tns:nextN"&gt;&lt;/input&gt;
-      &lt;output message="tns:nextNResponse"&gt;&lt;/output&gt;
-    &lt;/operation&gt;
-  &lt;/portType&gt;
+             targetNamespace="http://rand/" name="RandServiceService">;
+  <types>;
+    <xsd:schema>;
+      <xsd:import namespace="http://rand/"
+                  schemaLocation="http://localhost:8888/rs?xsd=1">;</xsd:import>;
+    </xsd:schema>;
+  </types>;
+  <message name="next1">;
+    <part name="parameters" element="tns:next1">;</part>;
+  </message>;
+  <message name="next1Response">;
+    <part name="parameters" element="tns:next1Response">;</part>;
+  </message>;
+  <message name="nextN">;
+    <part name="parameters" element="tns:nextN">;</part>;
+  </message>;
+  <message name="nextNResponse">;
+    <part name="parameters" element="tns:nextNResponse">;</part>;
+  </message>;
+  <portType name="RandService">;
+    <operation name="next1">;
+      <input message="tns:next1">;</input>;
+      <output message="tns:next1Response">;</output>;
+    </operation>;
+    <operation name="nextN">;
+      <input message="tns:nextN">;</input>;
+      <output message="tns:nextNResponse">;</output>;
+    </operation>;
+  </portType>;
 
-  &lt;!-- implementation dependent definition --&gt;
-  &lt;binding name="RandServicePortBinding" type="tns:RandService"&gt;
-    &lt;soap:binding transport="http://schemas.xmlsoap.org/soap/http"
-                  style="document"&gt;&lt;/soap:binding&gt;
-    &lt;operation name="next1"&gt;
-      &lt;soap:operation soapAction=""&gt;&lt;/soap:operation&gt;
-      &lt;input&gt;
-        &lt;soap:body use="literal"&gt;&lt;/soap:body&gt;
-      &lt;/input&gt;
-      &lt;output&gt;
-        &lt;soap:body use="literal"&gt;&lt;/soap:body&gt;
-      &lt;/output&gt;
-    &lt;/operation&gt;
-    &lt;operation name="nextN"&gt;
-      &lt;soap:operation soapAction=""&gt;&lt;/soap:operation&gt;
-      &lt;input&gt;
-        &lt;soap:body use="literal"&gt;&lt;/soap:body&gt;
-      &lt;/input&gt;
-      &lt;output&gt;
-        &lt;soap:body use="literal"&gt;&lt;/soap:body&gt;
-      &lt;/output&gt;
-    &lt;/operation&gt;
-  &lt;/binding&gt;
-  &lt;service name="RandServiceService"&gt;
-    &lt;port name="RandServicePort" binding="tns:RandServicePortBinding"&gt;
-      &lt;soap:address location="http://localhost:8888/rs"&gt;&lt;/soap:address&gt;
-    &lt;/port&gt;
-    &lt;port name="StandbyServicePort" binding="tns:RandServicePortBinding"&gt;
-      &lt;soap:address location="http://localhost:9999/rs"&gt;&lt;/soap:address&gt;
-    &lt;/port&gt;
-  &lt;/service&gt;
-&lt;/definitions&gt;
+  <!-- implementation dependent definition -->;
+  <binding name="RandServicePortBinding" type="tns:RandService">;
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+                  style="document">;</soap:binding>;
+    <operation name="next1">;
+      <soap:operation soapAction="">;</soap:operation>;
+      <input>;
+        <soap:body use="literal">;</soap:body>;
+      </input>;
+      <output>;
+        <soap:body use="literal">;</soap:body>;
+      </output>;
+    </operation>;
+    <operation name="nextN">;
+      <soap:operation soapAction="">;</soap:operation>;
+      <input>;
+        <soap:body use="literal">;</soap:body>;
+      </input>;
+      <output>;
+        <soap:body use="literal">;</soap:body>;
+      </output>;
+    </operation>;
+  </binding>;
+  <service name="RandServiceService">;
+    <port name="RandServicePort" binding="tns:RandServicePortBinding">;
+      <soap:address location="http://localhost:8888/rs">;</soap:address>;
+    </port>;
+    <port name="StandbyServicePort" binding="tns:RandServicePortBinding">;
+      <soap:address location="http://localhost:9999/rs">;</soap:address>;
+    </port>;
+  </service>;
+</definitions>;
 ```
 
 In the following diagram, please observe the relationship:
@@ -159,10 +159,10 @@ WSDL supports four basic patterns of operation:
 
 ```java
 ...
-&lt;operation name="query"&gt;
-  &lt;input message="tns:query"&gt;&lt;/input&gt;
-  &lt;output message="tns:queryResponse"&gt;&lt;/output&gt;
-&lt;/operation&gt;
+<operation name="query">;
+  <input message="tns:query">;</input>;
+  <output message="tns:queryResponse">;</output>;
+</operation>;
 ...
 ```
 
@@ -173,10 +173,10 @@ WSDL supports four basic patterns of operation:
 
 ```java
 ...
-&lt;operation name="questionnaire"&gt;
-  &lt;output message="tns:questionnaire"&gt;&lt;/output&gt;
-  &lt;input message="tns:questionnaireFeedback"&gt;&lt;/input&gt;
-&lt;/operation&gt;
+<operation name="questionnaire">;
+  <output message="tns:questionnaire">;</output>;
+  <input message="tns:questionnaireFeedback">;</input>;
+</operation>;
 ...
 ```
 
@@ -187,9 +187,9 @@ WSDL supports four basic patterns of operation:
 
 ```java
 ...
-&lt;operation name="ping"&gt;
-  &lt;input message="tns:ping"&gt;&lt;/input&gt;
-&lt;/operation&gt;
+<operation name="ping">;
+  <input message="tns:ping">;</input>;
+</operation>;
 ...
 ```
 
@@ -200,9 +200,9 @@ WSDL supports four basic patterns of operation:
 
 ```java
 ...
-&lt;operation name="notification"&gt;
-  &lt;output message="tns:notificationResponse"&gt;&lt;/output&gt;
-&lt;/operation&gt;
+<operation name="notification">;
+  <output message="tns:notificationResponse">;</output>;
+</operation>;
 ...
 ```
 
@@ -257,14 +257,14 @@ The address subelement of a port specifies a `location`, whose value is commonly
 <td>Document</td>
 </tr>
 <tr bgcolor="#cccccc">
-<td>`&lt;soapbind:binding&gt;`element</td>
+<td>`<soapbind:binding>;`element</td>
 <td>`style="rpc"`</td>
 <td>`style="document"`</td>
 </tr>
 <tr bgcolor="#ffffff">
-<td>`&lt;wsdl:part&gt;`element(s)</td>
-<td><span style="text-decoration: underline;">Any number</span> of `&lt;part&gt;` elements, each containing a _type_ attribute</td>
-<td><span style="text-decoration: underline;">Single</span> `&lt;part&gt;` element containing an _element_attribute; zero also allowed</td>
+<td>`<wsdl:part>;`element(s)</td>
+<td><span style="text-decoration: underline;">Any number</span> of `<part>;` elements, each containing a _type_ attribute</td>
+<td><span style="text-decoration: underline;">Single</span> `<part>;` element containing an _element_attribute; zero also allowed</td>
 </tr>
 </tbody>
 </table>
@@ -272,29 +272,29 @@ RPC-style SOAP:
 
 
 ```java
-&lt;tns:matchNoteAndNote xmlns:tns="urn:outline.demo"&gt;
-    &lt;in0 xsi:type="xsd:string"&gt;0000000000&lt;/in0&gt;
-    &lt;in1 xsi:type="xsd:string"&gt;000000000B&lt;/in1&gt;
-&lt;/tns:matchNoteAndNote&gt;
+<tns:matchNoteAndNote xmlns:tns="urn:outline.demo">;
+    <in0 xsi:type="xsd:string">;0000000000</in0>;
+    <in1 xsi:type="xsd:string">;000000000B</in1>;
+</tns:matchNoteAndNote>;
 ```
 
 
 
 ```java
-&lt;tns:matchNoteAndNoteResponse xmlns:tns="urn:outline.demo"&gt;
-    &lt;matchNoteAndNoteReturn xsi:type="xsd:string"&gt;yes&lt;/in0&gt;
-&lt;/tns:matchNoteAndNoteResponse&gt;
+<tns:matchNoteAndNoteResponse xmlns:tns="urn:outline.demo">;
+    <matchNoteAndNoteReturn xsi:type="xsd:string">;yes</in0>;
+</tns:matchNoteAndNoteResponse>;
 ```
 
 Document-style SOAP:
 
 
 ```java
-&lt;out:getNoteResponse xmlns:out="urn:outline.demo"&gt;
-    &lt;out:note key="000000000B" &gt;
-        &lt;out:content&gt;test&lt;/out:content&gt;
-    &lt;/out:note&gt;
-&lt;/out:getNoteResponse&gt;
+<out:getNoteResponse xmlns:out="urn:outline.demo">;
+    <out:note key="000000000B" >;
+        <out:content>;test</out:content>;
+    </out:note>;
+</out:getNoteResponse>;
 ```
 
 
@@ -308,14 +308,14 @@ Document-style SOAP:
 <td>**Literal**</td>
 </tr>
 <tr bgcolor="#cccccc">
-<td>`&lt;soapbind:body&gt;` `use`attribute</td>
+<td>`<soapbind:body>;` `use`attribute</td>
 <td>`use="encoded"`</td>
 <td>`use="literal"`</td>
 </tr>
 <tr bgcolor="#ffffff">
-<td>Other `&lt;soapbind:body&gt;`attributes</td>
+<td>Other `<soapbind:body>;`attributes</td>
 <td>`encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"`</td>
-<td>Optional: `parts` attribute referring to a`&lt;wsdl:part&gt;` name</td>
+<td>Optional: `parts` attribute referring to a`<wsdl:part>;` name</td>
 </tr>
 </tbody>
 </table>

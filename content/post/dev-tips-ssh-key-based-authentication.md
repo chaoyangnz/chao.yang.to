@@ -1,5 +1,5 @@
 ---
-title: 'SSH Key-based Authentication'
+title: 'dev-tips: SSH Key-based Authentication'
 toc: true
 date: "2015-12-14T21:41:25+00:00"
 ---

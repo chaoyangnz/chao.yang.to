@@ -14,6 +14,6 @@ I use the Automator to get an app for Mac OSX.
 
 Now I provide a download link here:
 
-[https://github.com/richdyang/bytecode-viewer/releases/tag/v2.9.8](https://github.com/richdyang/bytecode-viewer/releases/tag/v2.9.8)
+[https://github.com/chaoyangnz/bytecode-viewer/releases/tag/v2.9.8](https://github.com/chaoyangnz/bytecode-viewer/releases/tag/v2.9.8)
 
 

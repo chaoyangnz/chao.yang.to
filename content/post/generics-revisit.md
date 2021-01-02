@@ -52,14 +52,14 @@ Generics is an important feature since JDK 1.5
 </tr>
 </tbody>
 </table>
-In Java, array subtyping is **_covariant_**, meaning that type S[] is considered to be a subtype of T[] whenever S is a subtype of T.
+In Java, array subtyping is **_covariant_**, meaning that type C[] is considered to be a subtype of T[] whenever C is a subtype of T.
 
-In contrast, the subtyping relation for generics is **_invariant_**, meaning that type List<S> is _not _considered to be a subtype of List<T>, except in the trivial case where S and T are identical.
+In contrast, the subtyping relation for generics is **_invariant_**, meaning that type List<C> is _not _considered to be a subtype of List<T>, except in the trivial case where S and T are identical.
 
 So now it's what the wildcards for.
 
-*   Wildcards reintroduce **covariant** subtyping for generics, in that type List<S> _is _considered to be a subtype of List<? extends T> when S is a subtype of T.
-*   Wildcards also introduce _**contravariant** _subtyping for generics, in that type List<S> is considered to be a _subtype _of List<? super T> when S is a _supertype _of T.
+*   Wildcards reintroduce **covariant** subtyping for generics, in that type List<C> _is _considered to be a subtype of List<? extends T> when S is a subtype of T.
+*   Wildcards also introduce _**contravariant** _subtyping for generics, in that type List<C> is considered to be a _subtype _of List<? super T> when S is a _supertype _of T.
 
 
 ```java

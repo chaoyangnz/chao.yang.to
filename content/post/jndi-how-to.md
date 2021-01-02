@@ -133,7 +133,3 @@ context.bind("cn=favorite", fruit);
 ```java
 context.lookup(..)
 ```
-
-&nbsp;
-
-&nbsp;

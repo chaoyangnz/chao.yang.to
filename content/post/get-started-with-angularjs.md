@@ -59,7 +59,7 @@ Value, Constant, Factory and Service are the synaptic sugar of Provider.
 *   Value recipe
 
 
-```java
+```javascript
 myApp.value('clientId', 'a12345654321x');
 ```
 
@@ -68,7 +68,7 @@ myApp.value('clientId', 'a12345654321x');
 *   Constant recipe
 
 
-```java
+```javascript
 myApp.constant('planetName', 'Greasy Giant');
 ```
 
@@ -76,7 +76,7 @@ myApp.constant('planetName', 'Greasy Giant');
 *   Factory recipe
 
 
-```java
+```javascript
 myApp.factory('clientId', function clientIdFactory() {
   return 'a12345654321x';
 });
@@ -86,7 +86,7 @@ myApp.factory('clientId', function clientIdFactory() {
 *   Service recipe
 
 
-```java
+```javascript
 function UnicornLauncher(apiToken) {
 
   this.launchedCount = 0;
@@ -108,7 +108,7 @@ myApp.service('unicornLauncher', ["apiToken", UnicornLauncher]);
 *   provider recipe
 
 
-```java
+```javascript
 myApp.provider('unicornLauncher', function UnicornLauncherProvider() {
   var useTinfoilShielding = false;
 
@@ -192,7 +192,7 @@ Since the directives are registered via the Factory recipe, we can use the same 
 
 
 
-```java
+```javascript
 myApp.directive('myPlanet', ['planetName', function myPlanetDirectiveFactory(planetName) {
   // directive definition object
   return {
@@ -206,7 +206,7 @@ myApp.directive('myPlanet', ['planetName', function myPlanetDirectiveFactory(pla
 Using Factory recipes, you can also define Angular's filters and animations, but the controllers are a bit special.
 
 
-```java
+```javascript
 myApp.controller('DemoController', ['clientId', function DemoController(clientId) {
   this.clientId = clientId;
 }]);

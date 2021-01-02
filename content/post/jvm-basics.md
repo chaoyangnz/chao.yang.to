@@ -1,5 +1,5 @@
 ---
-title: JVM knowledge
+title: JVM basics
 toc: true
 id: 936
 categories:
@@ -224,8 +224,3 @@ This is about binary representation of a class.
 
 This is for run-time representation of a class.
 
-### 
-
-&nbsp;
-
-&nbsp;
