@@ -165,19 +165,5 @@ public class PointToPoint {
 ```
 
 
-### reliability mechanisms
-
-#### acknowledge
-
-#### transaction
-
-#### message persistence
-
-#### message expiry
-
-#### message priority level
-
-#### durable subscriber
-
 
 

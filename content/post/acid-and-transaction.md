@@ -162,17 +162,3 @@ And we refer to MVCC mainly for <span style="text-decoration: underline;">_appl
 
 *   **_old/new value comparison in committing time_**
 *   _**checksum or hash computation**_ on original data
-
-#### pessimistic locking
-
-#### optimistic locking
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;

@@ -212,3 +212,9 @@ From the design of Spring Security, normally it doesn't hope you throw exception
 This is to create a AnonymousAuthention if there is no Authentication in earlier filter.
 
 In general, it is not useful. If you keep it, you have to give it an extra care when you define `authorizeRequests` rules.
+
+# Custom Filter
+
+- Where I should add the filter and how it affects the order of default filter chain
+- Why you should disable the auto registration of a filter bean
+- multiple filter chains? possible?

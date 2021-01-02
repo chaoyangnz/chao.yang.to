@@ -2,16 +2,11 @@
 title: Notes - CSS in Depth
 date: 2018-03-06T08:15:00.717Z
 description: Notes - CSS in Depth
----
-
----
 categories:
 - CSS
-date: 2018-03-06T16:15:00Z
 tags:
 - CSS
 - Notes
-title: Notes - CSS in Depth
 toc: true
 ---
 

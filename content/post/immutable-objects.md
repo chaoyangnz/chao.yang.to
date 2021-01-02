@@ -63,18 +63,18 @@ Built-in library has many immutable classes:
 public class ImmutableTest {
     @Test
     public void testUnmodifiedCollectionImmutable(){                                                                                                                                                                                                                                    
-        List&lt;String&gt; list=new ArrayList&lt;String&gt;();                                                                               
+        List<String> list=new ArrayList<String>();                                                                               
         list.add("a");                                                                                                           
         list.add("b");                                                                                                           
         list.add("c");
 
         System.out.println(list);
 
-        List&lt;String&gt; unmodifiableList=Collections.unmodifiableList(list); 
+        List<String> unmodifiableList=Collections.unmodifiableList(list); 
 
         System.out.println(unmodifiableList);
 
-        List&lt;String&gt; unmodifiableList1=Collections.unmodifiableList(Arrays.asList("a","b","c")); 
+        List<String> unmodifiableList1=Collections.unmodifiableList(Arrays.asList("a","b","c")); 
         System.out.println(unmodifiableList1);
 
         String temp=unmodifiableList.get(1);
