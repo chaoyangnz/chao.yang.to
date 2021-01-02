@@ -70,7 +70,7 @@ You need to config Dispatcher Filter -- which is implemented as a servlet filter
 
 This file is for configuration of framework itself if you want to change the default options of framework. It includes all kinds of constants.
 
-Of course, you can define these constants in struts.xml by using &lt;constant name="" value=""  /&gt;
+Of course, you can define these constants in struts.xml by using <constant name="" value=""  />
 
 So struts.properties is optional.
 
@@ -82,71 +82,71 @@ Now the following is a practical configuration I used in my project:
 
 
 ```java
-&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;!DOCTYPE struts PUBLIC
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd"&gt;
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
 
-&lt;struts&gt;
+<struts>
 
-	&lt;!-- what the URL ends by, such as ***.do --&gt;
-	&lt;constant name="struts.action.extension" value="do" /&gt;
+	<!-- what the URL ends by, such as ***.do -->
+	<constant name="struts.action.extension" value="do" />
 
-	&lt;!-- in development mode, more errors are provided --&gt;
-	&lt;constant name="struts.devMode" value="false" /&gt;
+	<!-- in development mode, more errors are provided -->
+	<constant name="struts.devMode" value="false" />
 
-	&lt;!--default encoding for web app--&gt;
-	&lt;constant name="struts.i18n.encoding" value="utf-8" /&gt;
+	<!--default encoding for web app-->
+	<constant name="struts.i18n.encoding" value="utf-8" />
 
-	&lt;constant name="struts.i18n.reload" value="false" /&gt;
+	<constant name="struts.i18n.reload" value="false" />
 
-	&lt;constant name="struts.custom.i18n.resources" value="properties/web/lang" /&gt;
-	&lt;constant name="struts.configuration.xml.reload" value="true" /&gt;
+	<constant name="struts.custom.i18n.resources" value="properties/web/lang" />
+	<constant name="struts.configuration.xml.reload" value="true" />
 
-	&lt;constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" /&gt;
+	<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
 
-	&lt;!-- default package --&gt;
-	&lt;package name="my-default" namespace="/" extends="json-default"&gt;
+	<!-- default package -->
+	<package name="my-default" namespace="/" extends="json-default">
 
-		&lt;!-- define new interceptors and interceptor stack --&gt;
-		&lt;interceptors&gt; 
-			&lt;interceptor name="myInterceptor" class="com.my.web.interceptor.SecurityInterceptor"/&gt;
+		<!-- define new interceptors and interceptor stack -->
+		<interceptors> 
+			<interceptor name="myInterceptor" class="com.my.web.interceptor.SecurityInterceptor"/>
 
-			&lt;interceptor-stack name="myDefaultStack"&gt;
-		        &lt;interceptor-ref name="defaultStack" /&gt;
-		        &lt;interceptor-ref name="myInterceptor" /&gt;
-		        &lt;interceptor-ref name ="timer" /&gt; 
-				&lt;interceptor-ref name ="logger" /&gt; 
-		    &lt;/interceptor-stack&gt;	    
-		&lt;/interceptors&gt;
+			<interceptor-stack name="myDefaultStack">
+		        <interceptor-ref name="defaultStack" />
+		        <interceptor-ref name="myInterceptor" />
+		        <interceptor-ref name ="timer" /> 
+				<interceptor-ref name ="logger" /> 
+		    </interceptor-stack>	    
+		</interceptors>
 
-		&lt;!-- set default interceptor --&gt;
-	    &lt;default-interceptor-ref name="myDefaultStack"/&gt; 
+		<!-- set default interceptor -->
+	    <default-interceptor-ref name="myDefaultStack"/> 
 
-	    &lt;!-- Global results：error, failure, timeout, relogin --&gt;
-	    &lt;global-results&gt;
-	    	&lt;result name="success" type="json"&gt;
-			  &lt;param name="ignoreHierarchy"&gt;false&lt;/param&gt;
-			  &lt;param name="excludeNullProperties"&gt;false&lt;/param&gt;
-			&lt;/result&gt;
-			&lt;result name="exception" type="json"&gt;
-			  &lt;param name="ignoreHierarchy"&gt;false&lt;/param&gt;
-			  &lt;param name="excludeNullProperties"&gt;false&lt;/param&gt;
-			&lt;/result&gt;
-			&lt;result name="login" type="json"&gt;
-			  &lt;param name="ignoreHierarchy"&gt;false&lt;/param&gt;
-			  &lt;param name="excludeNullProperties"&gt;false&lt;/param&gt;
-			&lt;/result&gt;
-		&lt;/global-results&gt;
-    &lt;/package&gt;
+	    <!-- Global results：error, failure, timeout, relogin -->
+	    <global-results>
+	    	<result name="success" type="json">
+			  <param name="ignoreHierarchy">false</param>
+			  <param name="excludeNullProperties">false</param>
+			</result>
+			<result name="exception" type="json">
+			  <param name="ignoreHierarchy">false</param>
+			  <param name="excludeNullProperties">false</param>
+			</result>
+			<result name="login" type="json">
+			  <param name="ignoreHierarchy">false</param>
+			  <param name="excludeNullProperties">false</param>
+			</result>
+		</global-results>
+    </package>
 
-	&lt;!-- modules  --&gt;
-	&lt;include file="Struts/struts-alert.xml"/&gt;
-	&lt;include file="Struts/struts-systemManage.xml"/&gt;
-	&lt;include file="Struts/struts-workflow.xml"/&gt;
-	&lt;include file="Struts/struts-revaluation.xml"/&gt;
-	&lt;include file="Struts/struts-indexquery.xml"/&gt;
-&lt;/struts&gt;
+	<!-- modules  -->
+	<include file="Struts/struts-alert.xml"/>
+	<include file="Struts/struts-systemManage.xml"/>
+	<include file="Struts/struts-workflow.xml"/>
+	<include file="Struts/struts-revaluation.xml"/>
+	<include file="Struts/struts-indexquery.xml"/>
+</struts>
 ```
 
 &nbsp;
@@ -155,50 +155,50 @@ Now the following is a practical configuration I used in my project:
 
 
 ```java
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
-	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"&gt;
-	&lt;display-name&gt;icms-web&lt;/display-name&gt;
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>icms-web</display-name>
 
-	&lt;context-param&gt;
-		&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
-		&lt;param-value&gt;classpath*:/SpringContext/applicationContext-*.xml,classpath*:/SpringContext/*/applicationContext-*.xml,classpath*:/SpringContext/*/*/applicationContext-*.xml,classpath*:/SpringContext/*/*/*/applicationContext-*.xml
-		&lt;/param-value&gt;
-	&lt;/context-param&gt;
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:/SpringContext/applicationContext-*.xml,classpath*:/SpringContext/*/applicationContext-*.xml,classpath*:/SpringContext/*/*/applicationContext-*.xml,classpath*:/SpringContext/*/*/*/applicationContext-*.xml
+		</param-value>
+	</context-param>
 
-	&lt;listener&gt;
-		&lt;listener-class&gt;org.springframework.web.util.Log4jConfigListener&lt;/listener-class&gt;
-	&lt;/listener&gt;
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
 
-	&lt;listener&gt;
-		&lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
-	&lt;/listener&gt;
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
-	&lt;filter&gt;
-		&lt;filter-name&gt;struts2&lt;/filter-name&gt;
-		&lt;filter-class&gt;org.apache.struts2.dispatcher.FilterDispatcher&lt;/filter-class&gt;
-		&lt;init-param&gt;
-			&lt;param-name&gt;config&lt;/param-name&gt;
-			&lt;param-value&gt;struts-default.xml,struts-plugin.xml,Struts/struts.xml&lt;/param-value&gt;
-		&lt;/init-param&gt;
-	&lt;/filter&gt;
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>struts-default.xml,struts-plugin.xml,Struts/struts.xml</param-value>
+		</init-param>
+	</filter>
 
-	&lt;filter-mapping&gt;
-		&lt;filter-name&gt;struts2&lt;/filter-name&gt;
-		&lt;url-pattern&gt;*.do&lt;/url-pattern&gt;
-	&lt;/filter-mapping&gt;
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
 
-	&lt;welcome-file-list&gt;
-		&lt;welcome-file&gt;index.htm&lt;/welcome-file&gt;
-	&lt;/welcome-file-list&gt;
+	<welcome-file-list>
+		<welcome-file>index.htm</welcome-file>
+	</welcome-file-list>
 
-	&lt;session-config&gt;
-		&lt;session-timeout&gt;30&lt;/session-timeout&gt;
-	&lt;/session-config&gt;
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
 
-&lt;/web-app&gt;
+</web-app>
 ```
 
 
@@ -210,10 +210,10 @@ An action method can return a _String_ or _Result _or no return.
 
 
 ```java
-&lt;action name="submitDiscardColAppAction"
+<action name="submitDiscardColAppAction"
 			class="com.my.ManageDiscardColAction"
-			method="submitDiscardColApp"&gt;
-&lt;/action&gt;
+			method="submitDiscardColApp">
+</action>
 ```
 
 An action instance should be one per request. So when you integrate Struts2 with Spring, the bean scope of action should be **_sterotype_**.
@@ -222,11 +222,11 @@ The above example uses the global result setting. You can specify the action-spe
 
 
 ```java
-&lt;action name="submitDiscardColAppAction"
+<action name="submitDiscardColAppAction"
 			class="com.my.ManageDiscardColAction"
-			method="submitDiscardColApp"&gt;
-    &lt;result name="success" type="dispatcher"&gt;1.jsp&lt;/result&gt;
-&lt;/action&gt;
+			method="submitDiscardColApp">
+    <result name="success" type="dispatcher">1.jsp</result>
+</action>
 ```
 
 > NOTE: the "dispatcher" result type is default if you don't specify the result type.
@@ -284,7 +284,7 @@ We use OGNL to access data from value stack in some cases:
 
 ### Tags
 
-#### &lt;s:property&gt;
+#### <s:property>
 
 This tag is used to access value stack value.
 
@@ -292,17 +292,17 @@ This tag is used to access value stack value.
 
 
 ```java
-&lt;s:property value="propWithHtml" escape="false"/&gt;
+<s:property value="propWithHtml" escape="false"/>
 ```
 
 
 
 ```java
-&lt;script type="text/javascript"&gt;
-    var jsFromTag1 = '&lt;s:property value="javascriptExample"
-    escapeJavaScript="true"/&gt;';
+<script type="text/javascript">
+    var jsFromTag1 = '<s:property value="javascriptExample"
+    escapeJavaScript="true"/>';
     document.writeln(jsFromTag1);
-&lt;/script&gt;
+</script>
 ```
 
 
@@ -310,7 +310,7 @@ This tag is used to access value stack value.
 
 
 ```java
-&lt;s:property value="nullExample" default="A default value."/&gt;
+<s:property value="nullExample" default="A default value."/>
 ```
 
 
@@ -318,10 +318,10 @@ This tag is used to access value stack value.
 
 
 ```java
-&lt;s:property value="#application.anAppAttribute"/&gt;
-&lt;s:property value="#session.aSessionAttribute"/&gt;
-&lt;s:property value="#request.aRequestAttribute"/&gt;
-&lt;s:property value="#parameters.aRequestParameter"/&gt;
+<s:property value="#application.anAppAttribute"/>
+<s:property value="#session.aSessionAttribute"/>
+<s:property value="#request.aRequestAttribute"/>
+<s:property value="#parameters.aRequestParameter"/>
 ```
 
 parameters is for request parameters
@@ -330,14 +330,14 @@ No page object, but instead you use #attr to search all the attributes of applic
 
 
 ```java
-&lt;s:property value="#attr.anAppAttribute"/&gt;
-&lt;s:property value="#attr.aSessionAttribute"/&gt;
-&lt;s:property value="#attr.aRequestAttribute"/&gt;
-&lt;s:property value="#attr.aPageAttribute"/&gt;
+<s:property value="#attr.anAppAttribute"/>
+<s:property value="#attr.aSessionAttribute"/>
+<s:property value="#attr.aRequestAttribute"/>
+<s:property value="#attr.aPageAttribute"/>
 ```
 
 
-#### `&lt;s:debug&gt;`
+#### `<s:debug>`
 
 show all the stack
 
@@ -345,97 +345,97 @@ show all the stack
 
 This will search the value stack first, then fall off to use the JSP EL lookup. This is a little tricky.
 
-#### &lt;s:set&gt;
+#### <s:set>
 
-#### `&lt;s:if&gt;, &lt;s:elseif&gt;`, and`&lt;s:else&gt;`
+#### `<s:if>, <s:elseif>`, and`<s:else>`
 
 
 
 ```java
-&lt;s:if test="aBooleanExpression"&gt;
+<s:if test="aBooleanExpression">
 Printed when test is true.
-&lt;/s:if&gt;
-&lt;s:elseif test="aDifferentBooleanExpression"&gt;
-&lt;sif&gt; tagPrinted if previous test was false and this one is true.
-&lt;selseif&gt; tag&lt;/s:elseif&gt;
-&lt;s:else&gt;
+</s:if>
+<s:elseif test="aDifferentBooleanExpression">
+<sif> tagPrinted if previous test was false and this one is true.
+<selseif> tag</s:elseif>
+<s:else>
 Printed if neither were true.
-&lt;selse&gt; tag&lt;/s:else&gt;
+<selse> tag</s:else>
 ```
 
 
-#### &lt;s:iterator&gt;
+#### <s:iterator>
 
 
 
 ```java
-&lt;s:iterator value="listOfStrings"&gt;
-&lt;li&gt;&lt;s:property/&gt;&lt;/li&gt;
-&lt;/s:iterator&gt;
-```
-
-
-
-```java
-&lt;s:iterator value="listOfStrings" var="anItem"&gt;
-&lt;li&gt;&lt;s:property value="anItem"/&gt;&lt;/li&gt;
-&lt;/s:iterator&gt;
+<s:iterator value="listOfStrings">
+<li><s:property/></li>
+</s:iterator>
 ```
 
 
 
 ```java
-&lt;s:iterator value="mapStringString"&gt;
-  &lt;li&gt;
-     &lt;s:property value="key"/&gt; : &lt;s:property value="value"/&gt;
-  &lt;/li&gt;
-&lt;/s:iterator&gt;
+<s:iterator value="listOfStrings" var="anItem">
+<li><s:property value="anItem"/></li>
+</s:iterator>
 ```
 
 
 
 ```java
-&lt;s:iterator value="mapStringString" var="entry"&gt;
-   &lt;li&gt;
-     &lt;s:property value="#entry.key"/&gt; ==
-     &lt;s:property value="#entry.value"/&gt;
-   &lt;/li&gt;
-&lt;/s:iterator&gt;
+<s:iterator value="mapStringString">
+  <li>
+     <s:property value="key"/> : <s:property value="value"/>
+  </li>
+</s:iterator>
 ```
 
 
 
 ```java
-&lt;s:iterator value="list1" status="stat"&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;s:property value="#stat.index"/&gt;&lt;/td&gt;
-&lt;td&gt;&lt;s:property value="#stat.count"/&gt;&lt;/td&gt;
-&lt;td&gt;&lt;s:property value="#stat.even"/&gt;&lt;/td&gt;
-&lt;td&gt;&lt;s:property value="#stat.odd"/&gt;&lt;/td&gt;
-&lt;td&gt;&lt;s:property value="#stat.first"/&gt;&lt;/td&gt;
-&lt;td&gt;&lt;s:property value="#stat.last"/&gt;&lt;/td&gt;
-&lt;td&gt;&lt;s:property value="#stat.modulus(2)"/&gt;&lt;/td&gt;
-&lt;td&gt;&lt;s:property value="#stat.modulus(4)"/&gt;&lt;/td&gt;
-&lt;td&gt;&lt;s:property value="#stat.count % 4"/&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/s:iterator&gt;
+<s:iterator value="mapStringString" var="entry">
+   <li>
+     <s:property value="#entry.key"/> ==
+     <s:property value="#entry.value"/>
+   </li>
+</s:iterator>
 ```
-
-
-#### &lt;s:include&gt;
-
-similar to &lt;jsp:include&gt;
-
-#### &lt;s:action&gt;
 
 
 
 ```java
-&lt;s:action name="includedAction"/&gt;
+<s:iterator value="list1" status="stat">
+<tr>
+<td><s:property value="#stat.index"/></td>
+<td><s:property value="#stat.count"/></td>
+<td><s:property value="#stat.even"/></td>
+<td><s:property value="#stat.odd"/></td>
+<td><s:property value="#stat.first"/></td>
+<td><s:property value="#stat.last"/></td>
+<td><s:property value="#stat.modulus(2)"/></td>
+<td><s:property value="#stat.modulus(4)"/></td>
+<td><s:property value="#stat.count % 4"/></td>
+</tr>
+</s:iterator>
 ```
 
 
-#### &lt;s:url&gt;
+#### <s:include>
+
+similar to <jsp:include>
+
+#### <s:action>
+
+
+
+```java
+<s:action name="includedAction"/>
+```
+
+
+#### <s:url>
 
 dynamically generate the url mapped to the action
 

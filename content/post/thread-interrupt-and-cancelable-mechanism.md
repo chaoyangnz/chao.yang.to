@@ -29,7 +29,6 @@ Additionally, in the following scenarios, the interrupt status will be clear wit
 - tt.join(), actually equivalent to tt.wait() until not active, same as the above.
 - sleep(), not need to reacquire any lock before throwing InterruptedException.
 
-//TODO
 
 
 

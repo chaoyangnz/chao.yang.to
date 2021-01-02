@@ -30,9 +30,9 @@ Configuration metadata can be specified by XML-based configuration style or Anno
 
 
 ```java
-&lt;bean id="only_one_id" name="name1 name2 name3" ..&gt;
+<bean id="only_one_id" name="name1 name2 name3" ..>
 
-&lt;alias name="fromName" alias="toName"/&gt;
+<alias name="fromName" alias="toName"/>
 ```
 
 you can name a bean by use id/name attribute. What's more important is you can specify 0, 1, or multiple names/alias for a bean.
@@ -43,9 +43,9 @@ you can name a bean by use id/name attribute. What's more important is you can s
 
 
 ```java
-&lt;bean id="exampleBean" class="examples.ExampleBean"/&gt;  
+<bean id="exampleBean" class="examples.ExampleBean"/>  
 
-&lt;bean name="anotherExample" class="examples.ExampleBeanTwo$InnerClass"/&gt;
+<bean name="anotherExample" class="examples.ExampleBeanTwo$InnerClass"/>
 ```
 
 
@@ -53,7 +53,7 @@ you can name a bean by use id/name attribute. What's more important is you can s
 
 
 ```java
-&lt;bean id="clientService" class="examples.ClientService" factory-method="createInstance"/&gt;
+<bean id="clientService" class="examples.ClientService" factory-method="createInstance"/>
 ```
 
 
@@ -61,15 +61,15 @@ you can name a bean by use id/name attribute. What's more important is you can s
 
 
 ```java
-&lt;!-- the factory bean, which contains a method called createInstance() --&gt;
-&lt;bean id="serviceLocator" class="examples.DefaultServiceLocator"&gt;
-    &lt;!-- inject any dependencies required by this locator bean --&gt;
-&lt;/bean&gt;
+<!-- the factory bean, which contains a method called createInstance() -->
+<bean id="serviceLocator" class="examples.DefaultServiceLocator">
+    <!-- inject any dependencies required by this locator bean -->
+</bean>
 
-&lt;!-- the bean to be created via the factory bean --&gt;
-&lt;bean id="clientService"
+<!-- the bean to be created via the factory bean -->
+<bean id="clientService"
     factory-bean="serviceLocator"
-    factory-method="createClientServiceInstance"/&gt;
+    factory-method="createClientServiceInstance"/>
 ```
 
 
@@ -79,30 +79,30 @@ you can name a bean by use id/name attribute. What's more important is you can s
 
 
 ```java
-&lt;bean id="foo" class="x.y.Foo"&gt;
-    &lt;constructor-arg ref="bar"/&gt;
-    &lt;constructor-arg ref="baz"/&gt;
-&lt;/bean&gt;
+<bean id="foo" class="x.y.Foo">
+    <constructor-arg ref="bar"/>
+    <constructor-arg ref="baz"/>
+</bean>
 
-&lt;bean id="bar" class="x.y.Bar"/&gt;
+<bean id="bar" class="x.y.Bar"/>
 
-&lt;bean id="baz" class="x.y.Baz"/&gt;
+<bean id="baz" class="x.y.Baz"/>
 
-&lt;bean id="exampleBean" class="examples.ExampleBean"&gt;
-    &lt;constructor-arg type="int" value="7500000"/&gt;
-    &lt;constructor-arg type="java.lang.String" value="42"/&gt;
-&lt;/bean&gt;
+<bean id="exampleBean" class="examples.ExampleBean">
+    <constructor-arg type="int" value="7500000"/>
+    <constructor-arg type="java.lang.String" value="42"/>
+</bean>
 
-&lt;bean id="exampleBean" class="examples.ExampleBean"&gt;
-    &lt;constructor-arg index="0" value="7500000"/&gt;
-    &lt;constructor-arg index="1" value="42"/&gt;
-&lt;/bean&gt;
+<bean id="exampleBean" class="examples.ExampleBean">
+    <constructor-arg index="0" value="7500000"/>
+    <constructor-arg index="1" value="42"/>
+</bean>
 
-&lt;!-- compiled with the debug flag --&gt;
-&lt;bean id="exampleBean" class="examples.ExampleBean"&gt;
-    &lt;constructor-arg name="years" value="7500000"/&gt;
-    &lt;constructor-arg name="ultimateAnswer" value="42"/&gt;
-&lt;/bean&gt;
+<!-- compiled with the debug flag -->
+<bean id="exampleBean" class="examples.ExampleBean">
+    <constructor-arg name="years" value="7500000"/>
+    <constructor-arg name="ultimateAnswer" value="42"/>
+</bean>
 ```
 
 
@@ -111,18 +111,18 @@ you can name a bean by use id/name attribute. What's more important is you can s
 
 
 ```java
-&lt;bean id="bar" class="x.y.Bar"/&gt;
-&lt;bean id="baz" class="x.y.Baz"/&gt;
+<bean id="bar" class="x.y.Bar"/>
+<bean id="baz" class="x.y.Baz"/>
 
-&lt;!-- traditional declaration --&gt;
-&lt;bean id="foo" class="x.y.Foo"&gt;
-    &lt;constructor-arg ref="bar"/&gt;
-    &lt;constructor-arg ref="baz"/&gt;
-    &lt;constructor-arg value="foo@bar.com"/&gt;
-&lt;/bean&gt;
+<!-- traditional declaration -->
+<bean id="foo" class="x.y.Foo">
+    <constructor-arg ref="bar"/>
+    <constructor-arg ref="baz"/>
+    <constructor-arg value="foo@bar.com"/>
+</bean>
 
-&lt;!-- c-namespace declaration --&gt;
-&lt;bean id="foo" class="x.y.Foo" c:bar-ref="bar" c:baz-ref="baz" c:email="foo@bar.com"/&gt;
+<!-- c-namespace declaration -->
+<bean id="foo" class="x.y.Foo" c:bar-ref="bar" c:baz-ref="baz" c:email="foo@bar.com"/>
 ```
 
 
@@ -130,81 +130,81 @@ you can name a bean by use id/name attribute. What's more important is you can s
 
 
 ```java
-&lt;bean id="exampleBean" class="examples.ExampleBean"&gt;
-    &lt;!-- setter injection using the nested ref element --&gt;
-    &lt;property name="beanOne"&gt;
-        &lt;ref bean="anotherExampleBean"/&gt;
-    &lt;/property&gt;
+<bean id="exampleBean" class="examples.ExampleBean">
+    <!-- setter injection using the nested ref element -->
+    <property name="beanOne">
+        <ref bean="anotherExampleBean"/>
+    </property>
 
-    &lt;!-- setter injection using the neater ref attribute --&gt;
-    &lt;property name="beanTwo" ref="yetAnotherBean"/&gt;
-    &lt;property name="integerProperty" value="1"/&gt;
-&lt;/bean&gt;
+    <!-- setter injection using the neater ref attribute -->
+    <property name="beanTwo" ref="yetAnotherBean"/>
+    <property name="integerProperty" value="1"/>
+</bean>
 
-&lt;bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"&gt;
-    &lt;!-- results in a setDriverClassName(String) call --&gt;
-    &lt;property name="driverClassName" value="com.mysql.jdbc.Driver"/&gt;
-    &lt;property name="url" value="jdbc:mysql://localhost:3306/mydb"/&gt;
-    &lt;property name="username" value="root"/&gt;
-    &lt;property name="password" value="masterkaoli"/&gt;
-&lt;/bean&gt;
+<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <!-- results in a setDriverClassName(String) call -->
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/mydb"/>
+    <property name="username" value="root"/>
+    <property name="password" value="masterkaoli"/>
+</bean>
 
-&lt;bean id="outer" class="..."&gt;
-    &lt;!-- instead of using a reference to a target bean, simply define the target bean inline --&gt;
-    &lt;property name="target"&gt;
-        &lt;bean class="com.example.Person"&gt; &lt;!-- this is the inner bean --&gt;
-            &lt;property name="name" value="Fiona Apple"/&gt;
-            &lt;property name="age" value="25"/&gt;
-        &lt;/bean&gt;
-    &lt;/property&gt;
-&lt;/bean&gt;
+<bean id="outer" class="...">
+    <!-- instead of using a reference to a target bean, simply define the target bean inline -->
+    <property name="target">
+        <bean class="com.example.Person"> <!-- this is the inner bean -->
+            <property name="name" value="Fiona Apple"/>
+            <property name="age" value="25"/>
+        </bean>
+    </property>
+</bean>
 
-&lt;bean id="moreComplexObject" class="example.ComplexObject"&gt;
-    &lt;!-- results in a setAdminEmails(java.util.Properties) call --&gt;
-    &lt;property name="adminEmails"&gt;
-        &lt;props&gt;
-            &lt;prop key="administrator"&gt;administrator@example.org&lt;/prop&gt;
-            &lt;prop key="support"&gt;support@example.org&lt;/prop&gt;
-            &lt;prop key="development"&gt;development@example.org&lt;/prop&gt;
-        &lt;/props&gt;
-    &lt;/property&gt;
-    &lt;!-- results in a setSomeList(java.util.List) call --&gt;
-    &lt;property name="someList"&gt;
-        &lt;list&gt;
-            &lt;value&gt;a list element followed by a reference&lt;/value&gt;
-            &lt;ref bean="myDataSource" /&gt;
-        &lt;/list&gt;
-    &lt;/property&gt;
-    &lt;!-- results in a setSomeMap(java.util.Map) call --&gt;
-    &lt;property name="someMap"&gt;
-        &lt;map&gt;
-            &lt;entry key="an entry" value="just some string"/&gt;
-            &lt;entry key ="a ref" value-ref="myDataSource"/&gt;
-        &lt;/map&gt;
-    &lt;/property&gt;
-    &lt;!-- results in a setSomeSet(java.util.Set) call --&gt;
-    &lt;property name="someSet"&gt;
-        &lt;set&gt;
-            &lt;value&gt;just some string&lt;/value&gt;
-            &lt;ref bean="myDataSource" /&gt;
-        &lt;/set&gt;
-    &lt;/property&gt;
-&lt;/bean&gt;
+<bean id="moreComplexObject" class="example.ComplexObject">
+    <!-- results in a setAdminEmails(java.util.Properties) call -->
+    <property name="adminEmails">
+        <props>
+            <prop key="administrator">administrator@example.org</prop>
+            <prop key="support">support@example.org</prop>
+            <prop key="development">development@example.org</prop>
+        </props>
+    </property>
+    <!-- results in a setSomeList(java.util.List) call -->
+    <property name="someList">
+        <list>
+            <value>a list element followed by a reference</value>
+            <ref bean="myDataSource" />
+        </list>
+    </property>
+    <!-- results in a setSomeMap(java.util.Map) call -->
+    <property name="someMap">
+        <map>
+            <entry key="an entry" value="just some string"/>
+            <entry key ="a ref" value-ref="myDataSource"/>
+        </map>
+    </property>
+    <!-- results in a setSomeSet(java.util.Set) call -->
+    <property name="someSet">
+        <set>
+            <value>just some string</value>
+            <ref bean="myDataSource" />
+        </set>
+    </property>
+</bean>
 ```
 
 ** "" and null**
 
 
 ```java
-&lt;bean class="ExampleBean"&gt;
-    &lt;property name="email" value=""/&gt;
-&lt;/bean&gt;
+<bean class="ExampleBean">
+    <property name="email" value=""/>
+</bean>
 
-&lt;bean class="ExampleBean"&gt;
-    &lt;property name="email"&gt;
-        &lt;null/&gt;
-    &lt;/property&gt;
-&lt;/bean&gt;
+<bean class="ExampleBean">
+    <property name="email">
+        <null/>
+    </property>
+</bean>
 ```
 
 
@@ -213,15 +213,15 @@ you can name a bean by use id/name attribute. What's more important is you can s
 
 
 ```java
-&lt;bean name="john-classic" class="com.example.Person"&gt;
-    &lt;property name="name" value="John Doe"/&gt;
-    &lt;property name="spouse" ref="jane"/&gt;
-&lt;/bean&gt;
+<bean name="john-classic" class="com.example.Person">
+    <property name="name" value="John Doe"/>
+    <property name="spouse" ref="jane"/>
+</bean>
 
-&lt;bean name="john-modern"
+<bean name="john-modern"
       class="com.example.Person"
       p:name="John Doe"
-      p:spouse-ref="jane"/&gt;
+      p:spouse-ref="jane"/>
 ```
 
 

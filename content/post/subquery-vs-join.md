@@ -81,4 +81,4 @@ Basically, there are some differences:
 
 *   Subquery is more intuitive and relatively easy to understand.
 *   In most cases, EXISTS or JOIN will be much more efficient (and faster) than an IN statement.
-&nbsp;
+

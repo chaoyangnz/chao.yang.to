@@ -308,9 +308,6 @@ ul {
 }
 ```
 
-## custom properties
-
-// TODO
 
 
 

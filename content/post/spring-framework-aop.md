@@ -17,12 +17,12 @@ Typical use cases:
 
 Concepts:
 
-*   **Pointcut** -&gt; where to do: class filtering and method matching
-*   **Advice** -&gt; when to do: before/after/returning/throws/...
-*   **Aspect** -&gt; what to do, do what the application specified things. This is the only code application needs to define, others concepts are supported and configured by framework.
-*   **Advisor** -&gt; associate Advice and Pointcut
-*   **JoinPoint** -&gt; the execution point: the occurrence context including which class, which methods, proceeding method execution..
-*   **weaving** -&gt; when to proxy target: build time(compile-time), load-time, run-time
+*   **Pointcut** -> where to do: class filtering and method matching
+*   **Advice** -> when to do: before/after/returning/throws/...
+*   **Aspect** -> what to do, do what the application specified things. This is the only code application needs to define, others concepts are supported and configured by framework.
+*   **Advisor** -> associate Advice and Pointcut
+*   **JoinPoint** -> the execution point: the occurrence context including which class, which methods, proceeding method execution..
+*   **weaving** -> when to proxy target: build time(compile-time), load-time, run-time
 
 ### Spring AOP style
 

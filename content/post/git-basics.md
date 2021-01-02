@@ -15,7 +15,7 @@ date: "2015-04-28T13:50:15+00:00"
 
 #### checkout
 
-##### checkout &lt;branch&gt;
+##### checkout &lt;branch>
 
 > switch branch
 
@@ -26,12 +26,12 @@ git checkout dev
 
 ![checkout-branch](/media/checkout-branch.png)
 
-##### checkout &lt;commit&gt; [files]
+##### checkout &lt;commit> [files]
 
-> &lt;commit&gt; is HEAD by default. The current branch doesn't change, without moving the HEAD pointer location.
+> &lt;commit> is HEAD by default. The current branch doesn't change, without moving the HEAD pointer location.
 > 
 > 
-> copy the &lt;commit&gt; tree to index tree and working tree.
+> copy the &lt;commit> tree to index tree and working tree.
 
 
 ```java
@@ -45,9 +45,9 @@ git checkout a47c3
 
 #### reset
 
-##### reset &lt;commit&gt; [files]
+##### reset &lt;commit> [files]
 
-> move the HEAD, and copying &lt;commit&gt; tree to index or working tree.
+> move the HEAD, and copying &lt;commit> tree to index or working tree.
 > 
 > 
 > three mode:
@@ -75,27 +75,27 @@ git reset HEAD^ 1.txt
 
 ##### git diff
 
-working &lt;=&gt; index
+working &lt;=> index
 
 ##### git diff --cache
 
-index &lt;=&gt; HEAD
+index &lt;=> HEAD
 
 ##### git diff HEAD
 
-working &lt;=&gt; HEAD
+working &lt;=> HEAD
 
 ##### git diff HEAD^^
 
-working &lt;=&gt; HEAD^^
+working &lt;=> HEAD^^
 
 ##### git diff da985 b325c
 
-da985 &lt;=&gt; b325c
+da985 &lt;=> b325c
 
-##### git diff &lt;branch&gt;
+##### git diff &lt;branch>
 
-working &lt;=&gt; &lt;branch&gt; HEAD
+working &lt;=> &lt;branch> HEAD
 
 ![git-diff](/media/git-diff.png)
 
@@ -125,7 +125,7 @@ working &lt;=&gt; &lt;branch&gt; HEAD
 remote
 remote -v
 
-remote add &lt;remote_repo_name&gt; &lt;url&gt;
+remote add &lt;remote_repo_name> &lt;url>
 git remote add origin git@github.com:richdyang/1.git
 ```
 
@@ -135,7 +135,7 @@ git remote add origin git@github.com:richdyang/1.git
 
 
 ```java
-push -u &lt;remote_repo_name&gt; &lt;branch&gt;
+push -u &lt;remote_repo_name> &lt;branch>
 push
 ```
 

@@ -9,8 +9,8 @@ date: "2015-04-20T14:13:28+00:00"
 
 References:
 
-*   &lt;[Inside the Java Virtual Machine](https://www.artima.com/insidejvm/ed2/index.html)&gt;
-*   &lt;Java Performance - The Definitive Guide&gt;
+*   <[Inside the Java Virtual Machine](https://www.artima.com/insidejvm/ed2/index.html)&gt;
+*   <Java Performance - The Definitive Guide&gt;
 
 ### GC overview
 

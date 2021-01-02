@@ -91,16 +91,16 @@ public class LifecycleExposureBean implements BeanNameAware, BeanClassLoaderAwar
 
 
 ```java
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;beans xmlns="http://www.springframework.org/schema/beans"
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"&gt;
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-       &lt;bean class="context.lifecycle.LifecycleExposureBean" init-method="initMethod" destroy-method="destroyMethod"&gt;
-              &lt;property name="injectedProperty" value="This is the value of injected property" /&gt;
-       &lt;/bean&gt;
-&lt;/beans&gt;
+       <bean class="context.lifecycle.LifecycleExposureBean" init-method="initMethod" destroy-method="destroyMethod">
+              <property name="injectedProperty" value="This is the value of injected property" />
+       </bean>
+</beans>
 ```
 
 > Injection: injectedProperty = [This is the value of injected property]
@@ -123,7 +123,7 @@ public class LifecycleExposureBean implements BeanNameAware, BeanClassLoaderAwar
 
 When a bean depends on some beans which cannot be simply intialized by using `new`
 
-*   implement `FactoryBean&lt;T&gt;`
+*   implement `FactoryBean<T>`
 *   specify `<span class="FontName1">factory-bean</span>` and `<span class="FontName1">factory-method</span>`
 
 ### PropertyEditor
@@ -163,13 +163,13 @@ public class CustomBeanEditor extends PropertyEditorSupport {
 
 
 ```java
-&lt;bean id="customEditorConfigurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer"&gt;
-	&lt;property name="customEditors"&gt;
-		&lt;map&gt;
-			&lt;entry key="context.propertyeditor.CustomBean" value="context.propertyeditor.CustomBeanEditor" /&gt;
-		&lt;/map&gt;
-	&lt;/property&gt;
-&lt;/bean&gt;
+<bean id="customEditorConfigurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+	<property name="customEditors">
+		<map>
+			<entry key="context.propertyeditor.CustomBean" value="context.propertyeditor.CustomBeanEditor" />
+		</map>
+	</property>
+</bean>
 ```
 
 
@@ -184,13 +184,13 @@ You can regard ApplicationContext as a `MessageSource`, an `ApplicationEventPub
 
 
 ```java
-&lt;bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"&gt;
-    &lt;property name="basenames"&gt;
-        &lt;list&gt;
-            &lt;value&gt;message&lt;/value&gt;
-        &lt;/list&gt;
-    &lt;/property&gt;
-&lt;/bean&gt;
+<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basenames">
+        <list>
+            <value>message</value>
+        </list>
+    </property>
+</bean>
 ```
 
 
@@ -228,7 +228,7 @@ Output:
 
 `ApplicationEvent`  -- derive from java.util.`EventObject`
 
-`ApplicationListener&lt;T&gt;` interface
+`ApplicationListener<T>` interface
 
 `ApplicationEventPublisher.publishEvent()`
 
@@ -244,7 +244,7 @@ ApplicationContext implements ResourceLoader
 
 #### Environment and PropertySource Abstraction
 
-Environment --&gt; PropertySource
+Environment --> PropertySource
 
 
 ```java
@@ -267,21 +267,21 @@ Most of time, we use PropertyPlaceHolder
 
 
 ```java
-&lt;beans xmlns="http://www.springframework.org/schema/beans"
+<beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:context="http://www.springframework.org/schema/context"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd"&gt;
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    &lt;context:property-placeholder location="classpath:application.properties"/&gt;
+    <context:property-placeholder location="classpath:application.properties"/>
 
-    &lt;bean id="somebean" class="com.apress.prospring4.ch4.AppProperty"&gt;
-        &lt;property name="applicationHome" value="${application.home}"/&gt;
-        &lt;property name="userHome" value="${user.home}"&gt;&lt;/property&gt;
-    &lt;/bean&gt;
-&lt;/beans&gt;
+    <bean id="somebean" class="com.apress.prospring4.ch4.AppProperty">
+        <property name="applicationHome" value="${application.home}"/>
+        <property name="userHome" value="${user.home}"></property>
+    </bean>
+</beans>
 ```
 
 You can see, once you get the properties, you can use them in configuration files using `{....}`
@@ -296,13 +296,13 @@ Basically, a _profile_ instructs Spring to configure only the<span class="FontNa
 
 
 ```java
-&lt;beans xmlns="http://www.springframework.org/schema/beans"
+<beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd"
-        profile="devProfile"&gt;
+        profile="devProfile">
 ...
-&lt;/bean&gt;
+</bean>
 ```
 
 Those beans in the file should be instantiated only when the specified profile is <span class="FontName1">active. If its profile is not active, actually these beans will not be initialized.</span>

@@ -92,9 +92,9 @@ MySQL support multiple granularity locking .
 *   row-level:  `S` lock and `X` lock (`S` - shared/read,  `X` - exclusive/write)
 *   table-level: `IS` lock and `IX` lock (`IS` - intention shared/read, `IX` - intention exclusive/write)
 <div class="informaltable">
-<table style="height: 159px;" border="1" summary=" Compatibility matrix showing which combinations of&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-          lock types X, IX, S, and IS are allowed. Each cell in the&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-          matrix is marked as either &quot;Compatible&quot; or &quot;Conflict&quot;.&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+<table style="height: 159px;" border="1" summary=" Compatibility matrix showing which combinations of<br /><br /><br /><br /><br /><br /><br />
+          lock types X, IX, S, and IS are allowed. Each cell in the<br /><br /><br /><br /><br /><br /><br />
+          matrix is marked as either &quot;Compatible&quot; or &quot;Conflict&quot;.<br /><br /><br /><br /><br /><br /><br />
 " width="464"><colgroup> <col /> <col /> <col /> <col /> <col /></colgroup>
 <thead>
 <tr>

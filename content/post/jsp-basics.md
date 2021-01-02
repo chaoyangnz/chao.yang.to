@@ -18,7 +18,7 @@ date: "2015-02-02T04:03:45+00:00"
 
 
 ```java
-&lt;% int count=0; out.println("This is a scriptlet"); %&gt;
+<% int count=0; out.println("This is a scriptlet"); %>
 ```
 
 This block is placed in the body of method _jspService(request, response)
@@ -28,19 +28,19 @@ This block is placed in the body of method _jspService(request, response)
 
 
 ```java
-&lt;%@ page import="java.util.*,java.xml.*" %&gt;
+<%@ page import="java.util.*,java.xml.*" %>
 ```
 
 
 
 ```java
-&lt;%@ include file="xxx" %&gt;
+<%@ include file="xxx" %>
 ```
 
 
 
 ```java
-&lt;%@ taglib tagdir="/WEB-INF/tags/xxx" prefix="xxx" %&gt;
+<%@ taglib tagdir="/WEB-INF/tags/xxx" prefix="xxx" %>
 ```
 
 
@@ -49,7 +49,7 @@ This block is placed in the body of method _jspService(request, response)
 
 
 ```java
-&lt;%= "This is a expression argument" %&gt;
+<%= "This is a expression argument" %>
 ```
 
 
@@ -58,13 +58,13 @@ This block is placed in the body of method _jspService(request, response)
 
 
 ```java
-&lt;%! int count=0 %&gt;
+<%! int count=0 %>
 ```
 
 
 
 ```java
-&lt;%! int doubleCount() { count = count*2; return count; } %&gt;
+<%! int doubleCount() { count = count*2; return count; } %>
 ```
 
 This is equivlant with the member field and member method of the generated servlet.
@@ -74,8 +74,8 @@ This is equivlant with the member field and member method of the generated servl
 
 
 ```java
-&lt;!-- HTML Comments --&gt;
-&lt;%-- JSP Comments --%&gt;
+<!-- HTML Comments -->
+<%-- JSP Comments --%>
 ```
 
 The first is called <span style="text-decoration: underline;">_output comments_</span>, while the second is called _<span style="text-decoration: underline;">hidden comments</span>_.
@@ -163,25 +163,25 @@ PageContext is a subclass of JspContext.
 
 
 ```java
-&lt;web-app ...&gt;
+<web-app ...>
 
 ...
 
-&lt;jsp-config&gt;
+<jsp-config>
 
-&lt;jsp-property-group&gt;
+<jsp-property-group>
 
-&lt;url-pattern&gt;*.jsp&lt;/url-pattern&gt;
+<url-pattern>*.jsp</url-pattern>
 
-&lt;el-ignored&gt;true&lt;/el-ignored&gt;
+<el-ignored>true</el-ignored>
 
-&lt;scripting-invalid&gt;true&lt;/scripting-invalid&gt;
+<scripting-invalid>true</scripting-invalid>
 
-&lt;/jsp-property-group&gt;
+</jsp-property-group>
 
 ...
 
-&lt;/web-app&gt;
+</web-app>
 
 ```
 
@@ -189,7 +189,7 @@ PageContext is a subclass of JspContext.
 
 
 ```java
-&lt;%@ page isELIgnored="true" isScriptingEnabled="false" .... %&gt;
+<%@ page isELIgnored="true" isScriptingEnabled="false" .... %>
 ```
 
 &nbsp;

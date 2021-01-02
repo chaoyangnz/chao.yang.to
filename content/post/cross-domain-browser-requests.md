@@ -17,23 +17,23 @@ A page named 1.html from http://dev.company.com/1.html has a script requesting a
 
 This is only limited to Javascript request like AJAX, and not limited to <span style="text-decoration: underline;">normal resource references</span>:
 
-1\. hypertext link by _&lt;a href="..."&gt;_
+1\. hypertext link by _<a href="...">_
 
-_2\. _image by_ &lt;img src="..."&gt;_
+_2\. _image by_ <img src="...">_
 
-_3\. external _css stylesheet link by_ &lt;link type="text/css" href="..."&gt;_
+_3\. external _css stylesheet link by_ <link type="text/css" href="...">_
 
-4\. external javascript by _&lt;script type="text/javascript" src="..."&gt;_
+4\. external javascript by _<script type="text/javascript" src="...">_
 
-5\. form action by_ &lt;form action="..."&gt;_
+5\. form action by_ <form action="...">_
 
-6\. iframe by &lt;iframe src="..."&gt;
+6\. iframe by <iframe src="...">
 
 #### How to resolve this issue
 
 ##### 1\. JSONP
 
-JSONP, aka JSON with Padding. It actually makes use of the normal external javascript reference. a HTML `&lt;script&gt;` element specifies for its `src` attribute a URL that returns JSON.
+JSONP, aka JSON with Padding. It actually makes use of the normal external javascript reference. a HTML `<script>` element specifies for its `src` attribute a URL that returns JSON.
 
 ![web-basics-jsonp](/media/web-basics-jsonp.jpg)
 
@@ -41,13 +41,13 @@ For example, in the page of url http://localhost:8080/aes-gui/simple/poc/main/su
 
 
 ```java
-&lt;script type="text/javascript"&gt;
+<script type="text/javascript">
 function callback_for_response(data) {
 // data is the response
 }
-&lt;/script&gt;
+</script>
 
-&lt;script type="text/javascript" src="http://DEV:8080/aes-gui/simple/poc/main/add?callback=callback_for_response"&gt;&lt;/script&gt;
+<script type="text/javascript" src="http://DEV:8080/aes-gui/simple/poc/main/add?callback=callback_for_response"></script>
 ```
 
 When the application on domain sit.company.com has received this request, and found the query parameter "callback"(this is a kind of contract, others also use "jsonp" or anything others), then it generates the response like this:

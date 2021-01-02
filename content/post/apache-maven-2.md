@@ -328,7 +328,7 @@ Metadata</td>
 
 ### Project packaging
 
-we set the packaging for your project via the equally named POM element <tt>&lt;packaging&gt;</tt>. Some of the valid packaging values are <tt>jar</tt>, <tt>war</tt>, <tt>ear</tt> and <tt>pom</tt>. If no packaging value has been specified, it will default to <tt>jar</tt>.
+we set the packaging for your project via the equally named POM element <tt><packaging></tt>. Some of the valid packaging values are <tt>jar</tt>, <tt>war</tt>, <tt>ear</tt> and <tt>pom</tt>. If no packaging value has been specified, it will default to <tt>jar</tt>.
 
 ### Phase and goal binding
 
@@ -344,26 +344,26 @@ Let's see the plugin.xml of maven-compiler-plugin.jar:
 
 
 ```java
-&lt;plugin&gt;
-  &lt;mojos&gt;
-    &lt;mojo&gt;
-      &lt;goal&gt;compile&lt;/goal&gt;
+<plugin>
+  <mojos>
+    <mojo>
+      <goal>compile</goal>
       ....
-      &lt;phase&gt;compile&lt;/phase&gt;
+      <phase>compile</phase>
       ....
-    &lt;/mojo&gt;
-    &lt;mojo&gt;
-      &lt;goal&gt;help&lt;/goal&gt;
+    </mojo>
+    <mojo>
+      <goal>help</goal>
       ....
-    &lt;/mojo&gt;
-    &lt;mojo&gt;
-      &lt;goal&gt;testCompile&lt;/goal&gt;
+    </mojo>
+    <mojo>
+      <goal>testCompile</goal>
       ....
-      &lt;phase&gt;test-compile&lt;/phase&gt;
+      <phase>test-compile</phase>
       ....
-    &lt;/mojo&gt;
-  &lt;/mojos&gt;
-&lt;/plugin&gt;
+    </mojo>
+  </mojos>
+</plugin>
 ```
 
 maven-compiler-plugin defines 3 goals, and "compile" and "testCompiler" goals have the default phase, but "help" goal not.
@@ -375,26 +375,26 @@ But a goal can be bound on different phases which can be reconfigured by plugin 
 
 ```java
 ...
- &lt;plugin&gt;
-   &lt;groupId&gt;com.mycompany.example&lt;/groupId&gt;
-   &lt;artifactId&gt;display-maven-plugin&lt;/artifactId&gt;
-   &lt;version&gt;1.0&lt;/version&gt;
-   &lt;executions&gt;
-     &lt;execution&gt;
-       &lt;phase&gt;process-test-resources&lt;/phase&gt;
-       &lt;goals&gt;
-         &lt;goal&gt;time&lt;/goal&gt;
-       &lt;/goals&gt;
-     &lt;/execution&gt;
-     &lt;execution&gt;
-       &lt;phase&gt;process-resources&lt;/phase&gt;
-       &lt;goals&gt;
-         &lt;goal&gt;anotherGoal&lt;/goal&gt;
-         &lt;goal&gt;anotherGoalAgain&lt;/goal&gt;
-       &lt;/goals&gt;
-     &lt;/execution&gt;
-   &lt;/executions&gt;
- &lt;/plugin&gt;
+ <plugin>
+   <groupId>com.mycompany.example</groupId>
+   <artifactId>display-maven-plugin</artifactId>
+   <version>1.0</version>
+   <executions>
+     <execution>
+       <phase>process-test-resources</phase>
+       <goals>
+         <goal>time</goal>
+       </goals>
+     </execution>
+     <execution>
+       <phase>process-resources</phase>
+       <goals>
+         <goal>anotherGoal</goal>
+         <goal>anotherGoalAgain</goal>
+       </goals>
+     </execution>
+   </executions>
+ </plugin>
 ...
 ```
 
@@ -406,13 +406,13 @@ default.
 
 
 ```java
-&lt;project&gt;
+<project>
  [...]
- &lt;build&gt;
- &lt;defaultGoal&gt;install&lt;/defaultGoal&gt;
- &lt;/build&gt;
+ <build>
+ <defaultGoal>install</defaultGoal>
+ </build>
  [...]
-&lt;/project&gt;
+</project>
 ```
 
 
@@ -421,16 +421,16 @@ default.
 If you ask Maven to run a specific goal, then only that goal is run.
 
 For org.apache.maven:maven-***-plugin, you can run it using the plugin-prefix for short.
-> mvn &lt;plugin-prefix&gt;:&lt;goal&gt;
+> mvn <plugin-prefix>:<goal>
 or
 
 For your customized plugins, run it:
-> mvn &lt;plugin-group-id&gt;:&lt;plugin-artifact-id&gt;[:&lt;plugin-version&gt;]:&lt;goal&gt;
+> mvn <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>
 For example:
 > mvn compiler:compile  jar:jar
 This example runs two plugin goals: compilation of code, then JARing the result, skipping over any intermediate steps.
 
-mvn &lt;phase-name&gt;
+mvn <phase-name>
 
 Conversely, if you ask Maven to execute a phase, all phases and bound plugin goals up to that point in the lifecycle are also executed. This example requests the deploy lifecycle phase, which will also execute the verifiation, compilation, testing and packaging phases.
 > mvn deploy
@@ -442,22 +442,22 @@ The most common uses of profies are for Windows/Unix platform-specifi variation
 
 
 ```java
-&lt;project&gt;
+<project>
  ...
- &lt;profiles&gt;
- &lt;profile&gt;
- &lt;id&gt;YourProfile&lt;/id&gt;
+ <profiles>
+ <profile>
+ <id>YourProfile</id>
  ...settings, build, plugins etc...
- &lt;dependencies&gt;
- &lt;dependency&gt;
- &lt;groupId&gt;com.yourcompany&lt;/groupId&gt;
- &lt;artifactId&gt;yourlib&lt;/artifactId&gt;
- &lt;/dependency&gt;
- &lt;dependencies&gt;
- &lt;/profile&gt;
- &lt;/profiles&gt;
+ <dependencies>
+ <dependency>
+ <groupId>com.yourcompany</groupId>
+ <artifactId>yourlib</artifactId>
+ </dependency>
+ <dependencies>
+ </profile>
+ </profiles>
  ...
-&lt;/project&gt;
+</project>
 ```
 
 
@@ -473,26 +473,26 @@ _**Automatic Profie Activation**_
 
 
 ```java
-&lt;project&gt;
+<project>
  ...
- &lt;profiles&gt;
- &lt;profile&gt;
- &lt;id&gt;YourProfile&lt;/id&gt;
+ <profiles>
+ <profile>
+ <id>YourProfile</id>
  ...settings, build, etc...
- &lt;activation&gt;
- &lt;os&gt;
- &lt;name&gt;Windows XP&lt;/name&gt;
- &lt;family&gt;Windows&lt;/family&gt;
- &lt;arch&gt;x86&lt;/arch&gt;
- &lt;version&gt;5.1.2600&lt;/version&gt;
- &lt;/os&gt;
- &lt;fie&gt;
- &lt;missing&gt;somefolder/somefie.txt&lt;/missing&gt;
- &lt;/fie&gt;
- &lt;/activation&gt;
- &lt;/profile&gt;
- &lt;/profiles&gt;
+ <activation>
+ <os>
+ <name>Windows XP</name>
+ <family>Windows</family>
+ <arch>x86</arch>
+ <version>5.1.2600</version>
+ </os>
+ <fie>
+ <missing>somefolder/somefie.txt</missing>
+ </fie>
+ </activation>
+ </profile>
+ </profiles>
  ...
-&lt;/project&gt;
+</project>
 ```
 

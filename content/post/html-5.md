@@ -9,142 +9,142 @@ date: "2015-04-28T23:27:29+00:00"
 
 ### new elements
 
-#### `&lt;figure&gt;` and &lt;`figcaption&gt;`
+#### `<figure>` and <`figcaption>`
 
 
 
 ```java
-&lt;figure id="fig1"&gt;
-    &lt;figcaption&gt;Fig.1 Screen Reader Support for WAI-ARIA&lt;/figcaption&gt;
-    &lt;img src="http://img2.cache.netease.com/cnews/2015/4/28/201504281107026599c.jpg" alt="JAWS: Landmarks 1/1, Forms 4/5 … "&gt;
-&lt;/figure&gt;
+<figure id="fig1">
+    <figcaption>Fig.1 Screen Reader Support for WAI-ARIA</figcaption>
+    <img src="http://img2.cache.netease.com/cnews/2015/4/28/201504281107026599c.jpg" alt="JAWS: Landmarks 1/1, Forms 4/5 … ">
+</figure>
 ```
 
 
-#### `&lt;mark&gt;`
+#### `<mark>`
 
 This tag is very useful for the highlight of searching result.
 
 
 ```java
-&lt;h1&gt;Yes, You Can Use &lt;mark&gt;HTML5&lt;/mark&gt; Today!&lt;/h1&gt;
+<h1>Yes, You Can Use <mark>HTML5</mark> Today!</h1>
 ```
 
 
-#### `&lt;progress&gt;` and &lt;`meter&gt;`
+#### `<progress>` and <`meter>`
 
 
 
 ```java
-&lt;progress max="100" value="0"&gt;
+<progress max="100" value="0">
 ```
 
 
 
 ```java
-&lt;meter value="50" min="0" max="400" low="60" high="300" title="gigabytes"&gt;
-&lt;meter value="150" min="0" max="400" low="60" high="300" title="gigabytes"&gt;
-&lt;meter value="350" min="0" max="400" low="60" high="300" title="gigabytes"&gt;
+<meter value="50" min="0" max="400" low="60" high="300" title="gigabytes">
+<meter value="150" min="0" max="400" low="60" high="300" title="gigabytes">
+<meter value="350" min="0" max="400" low="60" high="300" title="gigabytes">
 ```
 
 the low and high are the thresholds. When in the range, the color is green, otherwise the color is yellow.
 
-#### &lt;time&gt;
+#### <time>
 
 
 
 ```java
-&lt;time datetime="2015-10-12"&gt;12 October of this year&lt;/time&gt;
+<time datetime="2015-10-12">12 October of this year</time>
 ```
 
 
 
 ```java
-&lt;!-- month --&gt;
-&lt;time&gt;2015-11&lt;/time&gt;
+<!-- month -->
+<time>2015-11</time>
 
-&lt;!-- date --&gt;
-&lt;time&gt;2015-11-12&lt;/time&gt;
+<!-- date -->
+<time>2015-11-12</time>
 
-&lt;!-- yearless date --&gt;
-&lt;time&gt;11-12&lt;/time&gt;
+<!-- yearless date -->
+<time>11-12</time>
 
-&lt;!-- time --&gt;
-&lt;time&gt;14:54:39&lt;/time&gt;
+<!-- time -->
+<time>14:54:39</time>
 
-&lt;!-- floating date and time --&gt;
-&lt;time&gt;2015-11-12T14:54:39&lt;/time&gt;
+<!-- floating date and time -->
+<time>2015-11-12T14:54:39</time>
 
-&lt;!-- time-zone offset --&gt;
-&lt;time&gt;-0800&lt;/time&gt;
+<!-- time-zone offset -->
+<time>-0800</time>
 
-&lt;!-- global date and time --&gt;
-&lt;time&gt;2015-11-12T06:54:39.929-0800&lt;/time&gt;
+<!-- global date and time -->
+<time>2015-11-12T06:54:39.929-0800</time>
 
-&lt;!-- week --&gt;
-&lt;time&gt;2015-W46&lt;/time&gt;
+<!-- week -->
+<time>2015-W46</time>
 
-&lt;!-- duration --&gt;
-&lt;time&gt;4h 18m 3s&lt;/time&gt;
+<!-- duration -->
+<time>4h 18m 3s</time>
 ```
 
 
-#### &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;
+#### <dl> <dt> <dd>
 
 This is called “description lists” or “association lists.”
 
 
 ```java
-&lt;dl&gt;
-  &lt;dt&gt;Selector:&lt;/dt&gt;
-  &lt;dd&gt;The element(s) targeted.&lt;/dd&gt;
-  &lt;dt&gt;Property:&lt;/dd&gt;
-  &lt;dd&gt;The feature used to add styling to the targeted element, defined before a colon.&lt;/dd&gt;
-  &lt;dt&gt;Value:&lt;/dd&gt;
-  &lt;dd&gt;The value given to the specified property, declared after the colon.&lt;/dd&gt;
-&lt;/dl&gt;
+<dl>
+  <dt>Selector:</dt>
+  <dd>The element(s) targeted.</dd>
+  <dt>Property:</dd>
+  <dd>The feature used to add styling to the targeted element, defined before a colon.</dd>
+  <dt>Value:</dd>
+  <dd>The value given to the specified property, declared after the colon.</dd>
+</dl>
 ```
 
 
-#### &lt;details&gt;
+#### <details>
 
 This tag is very useful to implement initially hidden "see more" .
 
 
 ```java
-&lt;details&gt;
-  &lt;summary&gt;Some Magazines of Note&lt;/summary&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;cite&gt;Bird Watcher's Digest&lt;/cite&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;cite&gt;Rower's Weekly&lt;/cite&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;cite&gt;Fishing Monthly&lt;/cite&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/details&gt;
+<details>
+  <summary>Some Magazines of Note</summary>
+  <ul>
+    <li><cite>Bird Watcher's Digest</cite></li>
+    <li><cite>Rower's Weekly</cite></li>
+    <li><cite>Fishing Monthly</cite></li>
+  </ul>
+</details>
 ```
 
 
-#### &lt;ol reversed start="3"&gt;
+#### <ol reversed start="3">
 
 
 
 ```java
-&lt;ol reversed&gt;
-    &lt;li&gt;&lt;cite&gt;Bird Watcher's Digest&lt;/cite&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;cite&gt;Rower's Weekly&lt;/cite&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;cite&gt;Fishing Monthly&lt;/cite&gt;&lt;/li&gt;
-&lt;/ol&gt;
+<ol reversed>
+    <li><cite>Bird Watcher's Digest</cite></li>
+    <li><cite>Rower's Weekly</cite></li>
+    <li><cite>Fishing Monthly</cite></li>
+</ol>
 
-&lt;ol start="4"&gt;
-    &lt;li&gt;&lt;cite&gt;Bird Watcher's Digest&lt;/cite&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;cite&gt;Rower's Weekly&lt;/cite&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;cite&gt;Fishing Monthly&lt;/cite&gt;&lt;/li&gt;
-&lt;/ol&gt;
+<ol start="4">
+    <li><cite>Bird Watcher's Digest</cite></li>
+    <li><cite>Rower's Weekly</cite></li>
+    <li><cite>Fishing Monthly</cite></li>
+</ol>
 
-&lt;ol start="4" reversed&gt;
-    &lt;li&gt;&lt;cite&gt;Bird Watcher's Digest&lt;/cite&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;cite&gt;Rower's Weekly&lt;/cite&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;cite&gt;Fishing Monthly&lt;/cite&gt;&lt;/li&gt;
-&lt;/ol&gt;
+<ol start="4" reversed>
+    <li><cite>Bird Watcher's Digest</cite></li>
+    <li><cite>Rower's Weekly</cite></li>
+    <li><cite>Fishing Monthly</cite></li>
+</ol>
 ```
 
 
@@ -154,16 +154,16 @@ The scoped style is only valid for the specified element and its children.
 
 
 ```java
-&lt;h1&gt;Page Title&lt;/h1&gt;
-&lt;article&gt;
-  &lt;style scoped&gt;
+<h1>Page Title</h1>
+<article>
+  <style scoped>
     h1 {
       color: blue;
     }
-  &lt;/style&gt;
-  &lt;h1&gt;Article Title&lt;/h1&gt;
-  &lt;p&gt;Article content.&lt;/p&gt;
-&lt;/article&gt;
+  </style>
+  <h1>Article Title</h1>
+  <p>Article content.</p>
+</article>
 ```
 
 
@@ -175,7 +175,7 @@ The new `async` attribute allows you to specify that a script should load asynch
 
 
 ```java
-&lt;script type="text/javascript" src="xxx.js" async&gt;&lt;/script&gt;
+<script type="text/javascript" src="xxx.js" async></script>
 ```
 
 
@@ -184,44 +184,44 @@ The new `async` attribute allows you to specify that a script should load asynch
 
 
 ```java
-&lt;picture src="" srcset="" sizes="" &gt;
+<picture src="" srcset="" sizes="" >
 
-&lt;img src="" srcset="" size="" &gt;
+<img src="" srcset="" size="" >
 ```
 
 
 #### others
 
-*   &lt;dialog&gt;
-*   &lt;a href="1.pdf" dowload&gt;download this document&lt;/a&gt;
-*   &lt;iframe sandbox seemless&gt;&lt;/iframe&gt;
-*   &lt;menu&gt; &lt;menulist&gt;
-*   &lt;address&gt;
+*   <dialog>
+*   <a href="1.pdf" dowload>download this document</a>
+*   <iframe sandbox seemless></iframe>
+*   <menu> <menulist>
+*   <address>
 
 ### HTML5 form
 
-#### &lt;input required&gt;
+#### <input required>
 
-#### &lt;input placeholder=""&gt;
+#### <input placeholder="">
 
-#### &lt;input pattern=""&gt;
+#### <input pattern="">
 
-#### &lt;input disabled&gt;
+#### <input disabled>
 
-#### &lt;input readonly&gt;
+#### <input readonly>
 
-#### &lt;datalist&gt;
+#### <datalist>
 
 
 
 ```java
-&lt;input type="color" list="colors" id="favcolor" name="favcolor"/&gt;
-&lt;datalist id="colors"&gt;
-    &lt;option value="#0000FF" label="blue"/&gt;
-    &lt;option value="#008000" label="green"/&gt;
-    &lt;option value="#ff0000" label="red"/&gt;
-    &lt;option value="#663399" label="RebeccaPurple"/&gt;
-&lt;/datalist&gt;
+<input type="color" list="colors" id="favcolor" name="favcolor"/>
+<datalist id="colors">
+    <option value="#0000FF" label="blue"/>
+    <option value="#008000" label="green"/>
+    <option value="#ff0000" label="red"/>
+    <option value="#663399" label="RebeccaPurple"/>
+</datalist>
 ```
 
 &nbsp;
@@ -240,4 +240,4 @@ The new `async` attribute allows you to specify that a script should load asynch
 *   `range`
 *   `color`
 
-#### &lt;form `novalidate&gt;`
+#### <form `novalidate>`
