@@ -25,8 +25,12 @@ exit
 
 Now I mount it to E disk. I have to kill explorer.exe and relaunch explorer from admistrative command so that I can  access the files in EFI disk. If the opencore is installed in the same disk of current OS, you can also mount it with \`mountvol e: /s\` and unmount with \`mountvol e: /d\`.
 
+If you cannot access the drive, use Explorer++ program
+
 - download ProperTree from <https://github.com/corpnewt/ProperTree>
 
 - Open E:/EFI/OC/config.plist with ProperTree
 
 - modify the boot args under Misc/boot menu
+
+see also https://manjaro.site/how-to-mount-macos-efi-partition-from-windows-10/
